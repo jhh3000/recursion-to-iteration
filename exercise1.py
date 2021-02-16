@@ -64,7 +64,7 @@ tree_vals = [[], [5], [3, 5], [3, 5, 9], [1, 3, 5, 9]]
 
 def test():
     for vals, bst in zip(tree_vals, trees):
-        for x in xrange(10):
+        for x in range(10):
             y = find_val_or_next_smallest(bst, x)
             if y is None:
                 assert all(x < z for z in vals)
@@ -73,3 +73,5 @@ def test():
                 if y != x:
                     i = bisect.bisect_right(vals, x)
                     assert all(x < z for z in vals[i:])
+
+test()
