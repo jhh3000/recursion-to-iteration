@@ -42,13 +42,9 @@ def find_val_or_next_smallest(bst, x, greatest=None):
         elif bst.val == x:
             return x
         elif bst.val > x:
-            (bst, x, greatest) = (bst.left, x, greatest)
-            continue
-            break
+            bst = bst.left
         else:
-            (bst, x, greatest) = (bst.right, x, greatest or bst.val)
-            continue
-            break
+            (bst, greatest) = (bst.right, greatest or bst.val)
 
 
 # tests
